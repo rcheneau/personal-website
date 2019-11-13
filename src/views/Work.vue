@@ -43,7 +43,7 @@
                 <li data-date="2012 - 2015">
                     <h3>License Maths / Informatique UPEM</h3>
                     <p>
-                        License Mathématiques et Informatique à l'Université Paris-Est Marne-la-Vallée
+                        License Mathématiques et Informatique à l'Université Paris-Est Marne-la-Vallée.
                     </p>
                 </li>
             </ul>
