@@ -45,18 +45,13 @@
     p {
         color: #aaa;
         font-size: 1em;
-
-        @include sm {
-            font-size: 1.5em;
-        }
     }
 
     #app {
         display: flex;
         justify-content: center;
         align-items: center;
-        background: rgb(116, 116, 191);
-        background: linear-gradient(180deg, rgba(116, 116, 191, 1) 0%, rgba(52, 138, 199, 1) 100%);
+        background: linear-gradient(to right, #348AC7, #7474BF);
     }
 
     #main {
