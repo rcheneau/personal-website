@@ -2,7 +2,8 @@
     <div id="home">
         <div>
             <h1>Raphaël Cheneau</h1>
-            <p>Développeur web</p>
+            <h2>Développeur web</h2>
+            <p>Ce site est développé en VueJS. Le code source est disponible <a href="#">ici</a>.</p>
         </div>
         <div></div>
     </div>
@@ -17,17 +18,4 @@
 
 <style scoped lang="scss">
     @import "../assets/breakpoints";
-
-    #home {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-
-        @include sm {
-            align-items: center;
-            justify-content: flex-start;
-        }
-
-
-    }
 </style>
