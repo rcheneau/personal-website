@@ -34,17 +34,27 @@
 
     h1 {
         font-weight: 400;
-        color: #363636;
+        color: #454545;
         font-size: 2em;
+        margin-top: 0;
 
         @include sm {
             font-size: 3em;
         }
     }
 
-    p {
-        color: #aaa;
-        font-size: 1em;
+    h2 {
+        font-weight: 200;
+        color: #737373;
+        font-size: 1.5em;
+
+        @include sm {
+            font-size: 2em;
+        }
+    }
+
+    a {
+        color: #0077aa;
     }
 
     #app {
