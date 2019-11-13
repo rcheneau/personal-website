@@ -1,30 +1,47 @@
 <template>
     <div id="work">
-        <h1>CV</h1>
 
+        <div class="header">
+            <div class="title"><h1>Mon parcours</h1></div>
+            <div class="download"><a href="#" class="btn">Télécharger le CV</a></div>
+        </div>
 
         <section>
             <ul>
                 <li data-date="2018 - 2019">
                     <h3>Sipartech</h3>
                     <p>
-                        Développeur PHP / Symphony 4
+                        Développement et maintenance de l'ERP interne de la société,
+                        <span class="keyword">PHP 7.3</span>
+                        / <span class="keyword">Symfony 4</span>
+                        / <span class="keyword">MySQL</span>
+                        / <span class="keyword">PostgreSQL</span>.
+                        <br>Développement d'extensions QGIS en <span class="keyword">python</span>.
                     </p>
                 </li>
                 <li data-date="2017 - 2018">
                     <h3>Imadiff</h3>
                     <p>
-                        Développeur web
+                        Mise en place de solutions WEB pour des clients externes en <span class="keyword">PHP</span>
+                        / <span class="keyword">Drupal 7&8</span>
+                        / <span class="keyword">MySQL</span>
+                        / <span class="keyword">API REST</span>.
+                        <br>Développement d'application desktop personalisées sous  <span class="keyword">FileMaker</span>.
                     </p>
                 </li>
                 <li data-date="2015 - 2017">
-                    <h3>Master logiciel UPEM</h3>
+                    <h3>Master logiciel UPEM et alternance chez 3Ci Solutions</h3>
                     <p>
-                        Master logiciel à l'Université Paris-Est Marne-la-Vallée en alternance à 3Ci Solutions
+                        Alternance visant à développer un portail de collecte, d'analyse et de visualisation de données
+                        d'encaissement via  / <span class="keyword">CodeIgniter</span>
+                        / <span class="keyword">MySQL</span>
+                        / <span class="keyword">Azure DocumentDB</span>
+                        / <span class="keyword">MondoDB</span>
+                        / <span class="keyword">D3.js</span>.
                     </p>
                 </li>
                 <li data-date="2012 - 2015">
-                    <h3>License Maths/Informatique UPEM</h3>
+                    <h3>License Maths / Informatique UPEM</h3>
                     <p>
                         License Mathématiques et Informatique à l'Université Paris-Est Marne-la-Vallée
                     </p>
@@ -38,15 +55,66 @@
 <style scoped lang="scss">
     @import '../assets/breakpoints';
 
-    $color-primary: #7474BF;
-    $color-secondary: #348AC7;
+    @mixin lhCrop($line-height) {
+        &::before {
+            content: '';
+            display: block;
+            height: 0;
+            width: 0;
+            margin-top: calc((1 - #{$line-height}) * 0.5em);
+        }
+    }
 
-    $spacing-xs: 20px;
-    $spacing: 40px;
+    $color-primary: #7474BF;
+    $color-secondary: #181834;
+
+    $spacing-xs: 10px;
+    $spacing: 20px;
     $date: 120px;
     $dotborder: 4px;
     $dot: 11px;
     $line: 4px;
+
+    p {
+        color: #aaa;
+        font-size: 1em;
+    }
+
+    .keyword {
+        font-weight: bold;
+    }
+
+    .header {
+        display: flex;
+
+        h1 {
+            @include lhCrop(1.2);
+        }
+
+        .download {
+            flex-grow: 1;
+            text-align: right;
+
+            .btn {
+                color: #7474BF !important;
+                text-transform: uppercase;
+                text-decoration: none;
+                background: #ffffff;
+                padding: 10px;
+                font-size: 0.8em;
+                border: 4px solid #7474BF !important;
+                display: inline-block;
+                transition: all 0.4s ease 0s;
+
+                &:hover {
+                    color: #ffffff !important;
+                    background: #7474BF;
+                    border-color: #7474BF !important;
+                    transition: all 0.4s ease 0s;
+                }
+            }
+        }
+    }
 
     section {
         padding-left: 100px;
@@ -57,9 +125,12 @@
 
     ul {
         border-left: 4px solid $color-primary;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
         position: relative;
         padding: $spacing-xs;
         margin: $spacing-xs auto;
+        background-color: #f1f1f8;
 
         @include sm {
             padding: $spacing;
@@ -87,11 +158,11 @@
             &::before {
                 left: ((($date * 0.6) + $spacing-xs + $line + $dot + ($dotborder * 2)) * 1.5) * -1;
                 content: attr(data-date);
-                color: grey;
+                color: #7474bf;
                 text-align: right;
                 font-weight: 100;
                 font-size: 0.9em;
-                min-width: $date;
+                width: $date;
 
                 @include sm {
                     left: ((($date * 0.6) + $spacing + $line + $dot + ($dotborder * 2)) * 1.5) * -1;
