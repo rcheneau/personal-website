@@ -7,6 +7,12 @@
                     <router-view></router-view>
                 </TransitionExpand>
             </div>
+            <div id="copyright">
+                <ul>
+                    <li>© Untitled.</li>
+                    <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </template>
@@ -119,4 +125,34 @@
             opacity: 0;
         }
     }
+
+     #copyright {
+         padding: 1em 0 0 0;
+         color: rgba(255, 255, 255, 0.45);
+         font-size: 0.8em;
+
+         ul {
+             list-style: none;
+             padding-left: 0;
+
+             li {
+                 display: inline-block;
+                 padding-left: 1em;
+                 margin-left: 1em;
+                 border-left: solid 1px
+                 rgba(255, 255, 255, 0.25);
+                 line-height: 1;
+
+                 a {
+                     color: rgba(255, 255, 255, 0.45);
+                 }
+
+                 &:first-child {
+                     padding-left: 0;
+                     margin-left: 0;
+                     border-left: 0;
+                 }
+             }
+         }
+     }
 </style>

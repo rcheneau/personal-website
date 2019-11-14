@@ -3,7 +3,10 @@
         <div>
             <h1>Raphaël Cheneau</h1>
             <h2>Développeur web</h2>
-            <p>Ce site est développé en VueJS. Le code source est disponible <a href="#">ici</a>.</p>
+            <p>
+                Ce site utilise le template HTML5 <a href="https://html5up.net/astral" target="_blank">Astral</a>.
+                Il a été modifié et adapté en VueJS. Le code source est disponible <a href="#">ici</a>.
+            </p>
         </div>
         <div></div>
     </div>
