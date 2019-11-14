@@ -35,12 +35,8 @@
     h1 {
         font-weight: 400;
         color: #454545;
-        font-size: 2em;
+        font-size: 3em;
         margin-top: 0;
-
-        @include sm {
-            font-size: 3em;
-        }
     }
 
     h2 {
@@ -57,11 +53,30 @@
         color: #0077aa;
     }
 
+    .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .col {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 100%;
+
+        @include md {
+            flex: 1;
+        }
+    }
+
     #app {
         display: flex;
         justify-content: center;
         align-items: center;
         background: linear-gradient(to right, #348AC7, #7474BF);
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
 
     #main {

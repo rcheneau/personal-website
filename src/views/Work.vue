@@ -1,14 +1,15 @@
 <template>
     <div id="work">
 
-        <div class="header">
-            <div class="title"><h1>Mon parcours</h1></div>
-            <div class="download"><a href="#" class="btn">Télécharger le CV</a></div>
+        <div class="row">
+            <div class="col"><h1>Mon parcours</h1></div>
+            <div class="col"></div>
+            <div class="col download"><a href="#" class="btn">Télécharger le CV</a></div>
         </div>
 
         <section>
             <ul>
-                <li data-date="2018 - 2019">
+                <li data-date-from="2018" data-date-to="2019">
                     <h3>Sipartech</h3>
                     <p>
                         Développement et maintenance de l'ERP interne de la société,
@@ -19,7 +20,7 @@
                         <br>Développement d'extensions QGIS en <span class="keyword">python</span>.
                     </p>
                 </li>
-                <li data-date="2017 - 2018">
+                <li data-date-from="2017" data-date-to="2018">
                     <h3>Imadiff</h3>
                     <p>
                         Mise en place de solutions WEB pour des clients externes en <span class="keyword">PHP</span>
@@ -29,7 +30,7 @@
                         <br>Développement d'application desktop personalisées sous  <span class="keyword">FileMaker</span>.
                     </p>
                 </li>
-                <li data-date="2015 - 2017">
+                <li data-date-from="2015" data-date-to="2017">
                     <h3>Master logiciel UPEM et alternance chez 3Ci Solutions</h3>
                     <p>
                         Alternance visant à développer un portail de collecte, d'analyse et de visualisation de données
@@ -40,7 +41,7 @@
                         / <span class="keyword">D3.js</span>.
                     </p>
                 </li>
-                <li data-date="2012 - 2015">
+                <li data-date-from="2012" data-date-to="2015">
                     <h3>License Maths / Informatique UPEM</h3>
                     <p>
                         License Mathématiques et Informatique à l'Université Paris-Est Marne-la-Vallée.
@@ -54,16 +55,6 @@
 
 <style scoped lang="scss">
     @import '../assets/breakpoints';
-
-    @mixin lhCrop($line-height) {
-        &::before {
-            content: '';
-            display: block;
-            height: 0;
-            width: 0;
-            margin-top: calc((1 - #{$line-height}) * 0.5em);
-        }
-    }
 
     $color-primary: #7474BF;
     $color-secondary: #181834;
@@ -84,41 +75,57 @@
         font-weight: bold;
     }
 
-    .header {
-        display: flex;
+    h1 {
+        text-align: center;
+        white-space: nowrap;
 
-        h1 {
-            @include lhCrop(1.2);
+        @include md {
+            text-align: left;
         }
 
-        .download {
-            flex-grow: 1;
-            text-align: right;
+        &::before {
+            content: '';
+            display: block;
+            height: 0;
+            width: 0;
+            margin-top: -12px;
+        }
+    }
 
-            .btn {
-                color: #7474BF !important;
-                text-transform: uppercase;
-                text-decoration: none;
-                background: #ffffff;
-                padding: 10px;
-                font-size: 0.8em;
-                border: 4px solid #7474BF !important;
-                display: inline-block;
+
+    .download {
+        white-space: nowrap;
+
+        .btn {
+            color: #7474BF !important;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: #ffffff;
+            padding: 10px;
+            font-size: 0.8em;
+            border: 4px solid #7474BF !important;
+            transition: all 0.4s ease 0s;
+            text-align: center;
+
+            &:hover {
+                color: #ffffff !important;
+                background: #7474BF;
+                border-color: #7474BF !important;
                 transition: all 0.4s ease 0s;
-
-                &:hover {
-                    color: #ffffff !important;
-                    background: #7474BF;
-                    border-color: #7474BF !important;
-                    transition: all 0.4s ease 0s;
-                }
             }
         }
     }
 
     section {
-        padding-left: 100px;
+        padding-left: 50px;
+        margin-top: 30px;
+
         @include sm {
+            padding-left: 100px;
+        }
+
+        @include md {
+            margin-top: 0;
             padding-left: 120px;
         }
     }
@@ -132,7 +139,7 @@
         margin: $spacing-xs auto;
         background-color: #f1f1f8;
 
-        @include sm {
+        @include md {
             padding: $spacing;
             margin: $spacing auto;
         }
@@ -144,7 +151,7 @@
             position: relative;
             list-style: none;
 
-            @include sm {
+            @include md {
                 padding-bottom: ($spacing * 0.5);
                 margin-bottom: $spacing;
             }
@@ -157,14 +164,19 @@
 
             &::before {
                 left: ((($date * 0.6) + $spacing-xs + $line + $dot + ($dotborder * 2)) * 1.5) * -1;
-                content: attr(data-date);
+                content: attr(data-date-from) '\A-   \A' attr(data-date-to);
                 color: #7474bf;
                 text-align: right;
                 font-weight: 100;
                 font-size: 0.9em;
                 width: $date;
+                white-space: pre;
 
                 @include sm {
+                    content: attr(data-date-from) ' - ' attr(data-date-to);
+                }
+
+                @include md {
                     left: ((($date * 0.6) + $spacing + $line + $dot + ($dotborder * 2)) * 1.5) * -1;
                 }
             }
@@ -179,7 +191,7 @@
                 content: "";
                 top: 5px;
 
-                @include sm {
+                @include md {
                     left: ($spacing + $line + ($dot * 0.35)) * -1;
                 }
             }
