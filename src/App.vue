@@ -75,8 +75,6 @@
         justify-content: center;
         align-items: center;
         background: linear-gradient(to right, #348AC7, #7474BF);
-        padding-top: 15px;
-        padding-bottom: 15px;
     }
 
     #main {
@@ -84,6 +82,8 @@
         flex-wrap: wrap;
         justify-content: center;
         width: 95%;
+        margin-top: 2.25em;
+        margin-bottom: 2.25em;
 
         @include md {
             width: 80%;
