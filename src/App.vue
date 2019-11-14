@@ -37,15 +37,21 @@
         color: #454545;
         font-size: 3em;
         margin-top: 0;
+        text-align: center;
+
+        @include md {
+            text-align: left;
+        }
     }
 
     h2 {
         font-weight: 200;
         color: #737373;
-        font-size: 1.5em;
+        font-size: 2em;
+        text-align: center;
 
-        @include sm {
-            font-size: 2em;
+        @include md {
+            text-align: left;
         }
     }
 

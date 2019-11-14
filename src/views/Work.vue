@@ -76,12 +76,7 @@
     }
 
     h1 {
-        text-align: center;
         white-space: nowrap;
-
-        @include md {
-            text-align: left;
-        }
 
         &::before {
             content: '';
