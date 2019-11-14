@@ -10,6 +10,7 @@
         methods: {
             enter(element) {
                 // To get height, has to set to auto -> hide it while doing it
+                element.style.width = getComputedStyle(element).width;
                 element.style.position = 'absolute';
                 element.style.visibility = 'hidden';
                 element.style.height = 'auto';
