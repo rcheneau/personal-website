@@ -5,7 +5,7 @@
             <h2>Développeur web</h2>
             <p>
                 Ce site utilise le template HTML5 <a href="https://html5up.net/astral" target="_blank">Astral</a>.
-                Il a été modifié et adapté en VueJS. Le code source est disponible <a href="#">ici</a>.
+                Il a été modifié et adapté en VueJS. Le code source est disponible <a href="https://github.com/rcheneau/personal-website" target="_blank">ici</a>.
             </p>
         </div>
         <div></div>
