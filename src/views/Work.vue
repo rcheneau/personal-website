@@ -9,49 +9,25 @@
 
         <section>
             <ul>
-                <li data-date-from="2018" data-date-to="2019">
-                    <h3>Sipartech</h3>
-                    <p>
-                        Développement et maintenance de l'ERP interne de la société,
-                        <span class="keyword">PHP 7.3</span>
-                        / <span class="keyword">Symfony 4</span>
-                        / <span class="keyword">MySQL</span>
-                        / <span class="keyword">PostgreSQL</span>.
-                        <br>Développement d'extensions QGIS en <span class="keyword">python</span>.
-                    </p>
-                </li>
-                <li data-date-from="2017" data-date-to="2018">
-                    <h3>Imadiff</h3>
-                    <p>
-                        Mise en place de solutions WEB pour des clients externes en <span class="keyword">PHP</span>
-                        / <span class="keyword">Drupal 7&8</span>
-                        / <span class="keyword">MySQL</span>
-                        / <span class="keyword">API REST</span>.
-                        <br>Développement d'application desktop personalisées sous  <span class="keyword">FileMaker</span>.
-                    </p>
-                </li>
-                <li data-date-from="2015" data-date-to="2017">
-                    <h3>Master logiciel UPEM et alternance chez 3Ci Solutions</h3>
-                    <p>
-                        Alternance visant à développer un portail de collecte, d'analyse et de visualisation de données
-                        d'encaissement via  / <span class="keyword">CodeIgniter</span>
-                        / <span class="keyword">MySQL</span>
-                        / <span class="keyword">Azure DocumentDB</span>
-                        / <span class="keyword">MondoDB</span>
-                        / <span class="keyword">D3.js</span>.
-                    </p>
-                </li>
-                <li data-date-from="2012" data-date-to="2015">
-                    <h3>License Maths / Informatique UPEM</h3>
-                    <p>
-                        License Mathématiques et Informatique à l'Université Paris-Est Marne-la-Vallée.
-                    </p>
+                <li v-bind:key="e.id"
+                    v-for="e in $options.experiences"
+                    v-bind:data-date-from="e.from"
+                    v-bind:data-date-to="e.to"
+                >
+                    <h3>{{e.title}}</h3>
+                    <p v-html="e.description"/>
                 </li>
             </ul>
         </section>
     </div>
 </template>
 
+<script>
+    import json from '../data/work';
+    export default {
+        experiences: json,
+    }
+</script>
 
 <style scoped lang="scss">
     @import '../assets/breakpoints';

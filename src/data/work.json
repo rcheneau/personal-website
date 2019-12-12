@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "title": "Sipartech",
+        "from": 2018,
+        "to": 2019,
+        "description": "Développement et maintenance de l'ERP interne de la société, <b>PHP 7.3</b> / <b>Symfony 4</b> / <b>MySQL</b> / <b>PostgreSQL</b><br>Développement d'extensions QGIS en <b>Python</b>"
+    },
+    {
+        "id": 2,
+        "title": "Imadiff",
+        "from": 2017,
+        "to": 2018,
+        "description": "Mise en place de solutions WEB pour des clients externes en <b>PHP</b> / <b>Drupal 7&8</b> / <b>MySQL</b> / <b>API REST</b><br>Développement d'application desktop personalisées sous <b>FileMaker</b>"
+    },
+    {
+        "id": 3,
+        "title": "Master logiciel UPEM et alternance chez 3Ci Solutions",
+        "from": 2015,
+        "to": 2017,
+        "description": "Alternance visant à développer un portail de collecte, d'analyse et de visualisation de données d'encaissement via <b>CodeIgniter</b> / <b>MySQL</b> / <b>Azure DocumentDB</b> / <b>MondoDB</b> <b>D3.js</b>"
+    },
+    {
+        "id": 4,
+        "title": "License Maths / Informatique UPEM",
+        "from": 2012,
+        "to": 2015,
+        "description": "License Mathématiques et Informatique à l'Université Paris-Est Marne-la-Vallée"
+    }
+]
